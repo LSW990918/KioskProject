@@ -22,7 +22,7 @@ abstract class Whopper() {
     open var vegetable = "tomato, lettuce, onion, cucumber"
     open var sauce = "none"
     open var price = 8000
-    var set = price+2500
+    open var set = price+2500
 
 
     open fun name() {
@@ -66,6 +66,7 @@ class Mons() : Whopper() {
     override var patty = "beef and chicken patty, bacon"
     override var sauce = "diablo sauce"
     override var price = 10200
+    override var set = price+2500
 }
 
 class Cube() : Whopper() {
@@ -74,4 +75,5 @@ class Cube() : Whopper() {
     override var patty = "cube steak and beef patty"
     override var sauce = "steak sauce and mayonnaise"
     override var price = 9900
+    override var set = price+2500
 }
