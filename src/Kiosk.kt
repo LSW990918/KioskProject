@@ -31,16 +31,16 @@ fun main() {
             1 -> {
                 while (true){
                     println("[Whopper MENU]\n"
-                            + "1. Whopper            | 버거킹의 대표 메뉴 쇠고기패티 와퍼!\n"
-                            + "2. Bulgogi whopper    | 불맛 가득 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!\n"
-                            + "3. Monster whopper    | 기본재료에 치킨패티, 베이컨, 화끈한 디아블로 소스를 더한 와퍼!\n"
-                            + "4. Cube steak whopper | 고기에 고기를 쌓아만든 고기 맛의 정점\n"
+                            + "1. Whopper            | W  8.0 | 버거킹의 대표 메뉴 쇠고기패티 와퍼!\n"
+                            + "2. Bulgogi whopper    | W  8.0 | 불맛 가득 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!\n"
+                            + "3. Monster whopper    | W 10.2 | 기본재료에 치킨패티, 베이컨, 화끈한 디아블로 소스를 더한 와퍼!\n"
+                            + "4. Cube steak whopper | W  9.9 | 고기에 고기를 쌓아만든 고기 맛의 정점\n"
                             + "0. 뒤로가기            | 전체메뉴로 돌아가기\n"
                     )
                     var ww = readln()  //와퍼 선택하기
                     val buy = Buy()  //buy = Buy 클래스
                     when (ww.toInt()) {
-                        1 -> { //1번(33줄) 선택시
+                        1 -> { //1번(33줄) 선택시 기본 와퍼
                             while (true) {
                                 var w = Basic()  //w = 기본 와퍼
                                 buy.name(Basic()) //해당 와퍼 소개 내용
@@ -85,11 +85,140 @@ fun main() {
                                 }
                             }
                         }
-                        2 -> {
+                        2 -> { // 불고기와퍼
+                            while (true) {
+                                var w = Bulg()  //w = 기본 와퍼
+                                buy.name(Bulg()) //해당 와퍼 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        buy.one(Bulg()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        buy.set(Bulg()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        buy.displayInfo(Bulg())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
                         }
-                        3 -> {
+                        3 -> { // 몬스터와퍼
+                            while (true) {
+                                var w = Mons()  //w = 기본 와퍼
+                                buy.name(Mons()) //해당 와퍼 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        buy.one(Mons()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        buy.set(Mons()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        buy.displayInfo(Mons())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
                         }
-                        4 -> {
+                        4 -> { // 큐브스테이크와퍼
+                            while (true) {
+                                var w = Cube()  //w = 기본 와퍼
+                                buy.name(Cube()) //해당 와퍼 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        buy.one(Cube()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        buy.set(Cube()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> {  //결제
+                                                println("${w.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                                break
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        buy.displayInfo(Cube())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
                         }
                         0 -> {
                             break
