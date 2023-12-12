@@ -107,7 +107,48 @@ fun main() {
             }
             //음료
             4 -> {
+                while (true){
+                    println("[SoftDrink MENU]\n"
+                            + "1. CocaCola     | 햄버거의 영원한 단짝 코카콜라! \n"
+                            + "2. sprite       | 콜라의 라이벌 스프라이트 샤워하실래요?\n"
+                            + "3. welches      | 포도의 산뜻함과 청량감이 만났다. 웰치스!\n"
+                            + "4. mountain dwe | 새로운 맛의 청량음료를 원한다면 골라라 마운틴듀!\n"
+                            + "0. 뒤로가기       | 전체메뉴로 돌아가기\n"
+                    )
+                    var sd = readln()
+                    when(sd.toInt()){
+                         1 -> {
+                             while(true){
+                                 println("[CocaCola Size]\n"
+                                         + "1. 사이즈(M)  | W 1.6\n"
+                                         + "2. 사이즈(L)  | W 2.1\n"
+                                         + "3. 사이즈(XL) | W 2.4\n"
+                                         + "0. 뒤로가기    | 메뉴 선택으로 돌아가기\n")
+                                 var sz = readln()
+                                 when(sz.toInt()){
+                                     1 -> {
+                                         println("[CocaCola Size]\n"
+                                                 + "1. 결제하기    | 음료 결제하기\n"
+                                                 + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n")
+                                     }
+                                     2 -> {
 
+                                     }
+                                     3 -> {
+
+                                     }
+                                     0 -> {
+                                         break
+                                     }
+                                 }
+                             }
+
+                         }
+                         0 -> {
+                            break
+                         }
+                    }
+                }
             }
             //실행종료
             0 -> {
