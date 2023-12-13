@@ -20,7 +20,7 @@ fun main() {
                     + "2. Chicken burger  | 에그번과 고소한 소스, 치킨패티의 만남! \n"
                     + "3. Side            | 신선한 재료만을 엄선해서 버거킹만의 비법으로 바삭하게!\n"
                     + "4. Drink           | 탄산으로 더 짜릿하게!\n"
-                    + "0. 종료            | 키오스크 종료\n"
+                    + "0. 종료             | 키오스크 종료\n"
         )
         val main = readln()
         if (!main.isNumeric()) {
@@ -239,9 +239,9 @@ fun main() {
                 while (true){
                     println("[SoftDrink MENU]\n"
                             + "1. CocaCola     | 햄버거의 영원한 단짝 코카콜라! \n"
-                            + "2. sprite       | 콜라의 라이벌 스프라이트 샤워하실래요?\n"
-                            + "3. welches      | 포도의 산뜻함과 청량감이 만났다. 웰치스!\n"
-                            + "4. mountain dwe | 새로운 맛의 청량음료를 원한다면 골라라 마운틴듀!\n"
+                            + "2. Sprite       | 콜라의 라이벌 스프라이트 샤워하실래요?\n"
+                            + "3. Welches      | 포도의 산뜻함과 청량감이 만났다. 웰치스!\n"
+                            + "4. Mountain Dwe | 새로운 맛의 청량음료를 원한다면 골라라 마운틴듀!\n"
                             + "0. 뒤로가기       | 전체메뉴로 돌아가기\n"
                     )
                     var sd = readln()
@@ -256,23 +256,284 @@ fun main() {
                                  var sz = readln()
                                  when(sz.toInt()){
                                      1 -> {
-                                         println("[CocaCola Size]\n"
-                                                 + "1. 결제하기    | 음료 결제하기\n"
-                                                 + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n")
+                                         while (true) {
+                                             println(
+                                                 "[결제]\n"
+                                                         + "1. 결제하기    | 음료 결제하기\n"
+                                                         + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                             )
+                                             var cc = readln()
+                                             when(cc.toInt()){
+                                                 1 -> {
+                                                     println("완료")
+                                                 }
+                                                 0 -> {
+                                                        break
+                                                 }
+                                             }
+
+                                         }
                                      }
                                      2 -> {
+                                         while (true) {
+                                             println(
+                                                 "[결제]\n"
+                                                         + "1. 결제하기    | 음료 결제하기\n"
+                                                         + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                             )
+                                             var cc = readln()
+                                             when(cc.toInt()){
+                                                 1 -> {
+                                                     println("완료")
+                                                 }
+                                                 0 -> {
+                                                     break
+                                                 }
+                                             }
 
+                                         }
                                      }
                                      3 -> {
+                                         while (true) {
+                                             println(
+                                                 "[결제]\n"
+                                                         + "1. 결제하기    | 음료 결제하기\n"
+                                                         + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                             )
+                                             var cc = readln()
+                                             when(cc.toInt()){
+                                                 1 -> {
+                                                     println("완료")
+                                                 }
+                                                 0 -> {
+                                                     break
+                                                 }
+                                             }
 
+                                         }
                                      }
                                      0 -> {
                                          break
                                      }
                                  }
                              }
-
                          }
+                        2 -> {
+                            while(true){
+                                println("[Sprite Size]\n"
+                                        + "1. 사이즈(M)  | W 1.6\n"
+                                        + "2. 사이즈(L)  | W 2.1\n"
+                                        + "3. 사이즈(XL) | W 2.4\n"
+                                        + "0. 뒤로가기    | 메뉴 선택으로 돌아가기\n")
+                                var sz = readln()
+                                when(sz.toInt()){
+                                    1 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    2 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    3 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        3 -> {
+                            while(true){
+                                println("[Welches Size]\n"
+                                        + "1. 사이즈(M)  | W 1.6\n"
+                                        + "2. 사이즈(L)  | W 2.1\n"
+                                        + "3. 사이즈(XL) | W 2.4\n"
+                                        + "0. 뒤로가기    | 메뉴 선택으로 돌아가기\n")
+                                var sz = readln()
+                                when(sz.toInt()){
+                                    1 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    2 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    3 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        4 -> {
+                            while(true){
+                                println("[Mountain Dwe Size]\n"
+                                        + "1. 사이즈(M)  | W 1.6\n"
+                                        + "2. 사이즈(L)  | W 2.1\n"
+                                        + "3. 사이즈(XL) | W 2.4\n"
+                                        + "0. 뒤로가기    | 메뉴 선택으로 돌아가기\n")
+                                var sz = readln()
+                                when(sz.toInt()){
+                                    1 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    2 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    3 -> {
+                                        while (true) {
+                                            println(
+                                                "[결제]\n"
+                                                        + "1. 결제하기    | 음료 결제하기\n"
+                                                        + "0. 뒤로가기    | 사이즈 선택으로 돌아가기\n"
+                                            )
+                                            var cc = readln()
+                                            when(cc.toInt()){
+                                                1 -> {
+                                                    println("완료")
+                                                }
+                                                0 -> {
+                                                    break
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
                          0 -> {
                             break
                          }
