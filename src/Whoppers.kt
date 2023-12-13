@@ -1,4 +1,4 @@
-package Kiosk
+package Classes
 
 class Buy() {
     fun set(operation: Whopper) {
@@ -39,6 +39,7 @@ abstract class Whopper() {
     fun set() {
         println("가격 : ${set}원\n"
                 +"1.구매 0. 뒤로 가기")
+
     }
     open fun displayInfo() {
         println("번   : ${bun}\n"+
