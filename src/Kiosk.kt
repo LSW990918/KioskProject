@@ -1,6 +1,6 @@
 @file:Suppress("UNREACHABLE_CODE")
 
-package Kiosk
+package Classes
 
 fun String.isNumeric(): Boolean {
     return try {
@@ -12,6 +12,8 @@ fun String.isNumeric(): Boolean {
 }
 
 fun main() {
+    var money = (25000..80000).random()
+    println("초기금액 ${money}원이 지급되었습니다.")
     println("버거킹에 오신것을 환영합니다!")
     while (true) {
         println(
@@ -35,9 +37,11 @@ fun main() {
                             + "2. Bulgogi whopper    | W  8.0 | 불맛 가득 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!\n"
                             + "3. Monster whopper    | W 10.2 | 기본재료에 치킨패티, 베이컨, 화끈한 디아블로 소스를 더한 와퍼!\n"
                             + "4. Cube steak whopper | W  9.9 | 고기에 고기를 쌓아만든 고기 맛의 정점\n"
-                            + "0. 뒤로가기            | 전체메뉴로 돌아가기\n"
-                    )
+                            + "0. 뒤로가기            | 전체메뉴로 돌아가기\n")
                     var ww = readln()  //와퍼 선택하기
+                    if (!ww.isNumeric()) {
+                        System.err.println("입력은 숫자만 가능합니다")
+                        continue }
                     val buy = Buy()  //buy = Buy 클래스
                     when (ww.toInt()) {
                         1 -> { //1번(33줄) 선택시 기본 와퍼
@@ -50,8 +54,14 @@ fun main() {
                                         buy.one(Basic()) //단품 구매창
                                         var purchase = readln()
                                         when (purchase.toInt()) {
-                                            1 -> {  //결제
-                                                println("${w.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                            1 -> { //결제
+                                                if (money-w.price < 0) {
+                                                    println("잔액이 부족합니다.")
+                                                } else {
+                                                    println("결제금액 ${w.price}원이 결제되었습니다.\n"
+                                                            + "남은 잔액은 ${money-w.price}원 입니다. 감사합니다.\n")
+                                                    money -= w.price //결제완료후 잔액차감
+                                                }
                                                 break
                                             }
                                             0 -> {
@@ -63,8 +73,14 @@ fun main() {
                                         buy.set(Basic()) //세트 구매창
                                         var purchase = readln()
                                         when (purchase.toInt()) {
-                                            1 -> {  //결제
-                                                println("${w.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                            1 -> { //결제
+                                                if (money-w.set < 0) {
+                                                    println("잔액이 부족합니다.")
+                                                } else {
+                                                    println("결제금액 ${w.set}원이 결제되었습니다.\n"
+                                                            + "남은 잔액은 ${money-w.set}원 입니다. 감사합니다.\n")
+                                                    money -= w.set //결제완료후 잔액차감
+                                                }
                                                 break
                                             }
                                             0 -> {
