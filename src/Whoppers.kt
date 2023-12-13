@@ -34,11 +34,11 @@ abstract class Whopper() {
     }
     fun one() {
         println("가격 : ${price}원\n"
-                +"1.구매 0. 뒤로 가기")
+                +"1.장바구니에 추가 0. 뒤로 가기")
     }
     fun set() {
         println("가격 : ${set}원\n"
-                +"1.구매 0. 뒤로 가기")
+                +"1.장바구니에 추가 0. 뒤로 가기")
 
     }
     open fun displayInfo() {
