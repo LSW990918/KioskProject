@@ -103,8 +103,198 @@ fun main() {
             }
             //사이드
             3 -> {
-
+                while (true){
+                    println ("[Side MENU]\n"
+                    +"1. 감자튀김            | 세계최고의 감자만 엄선해서 버거킹만의 비법으로 바삭하게!\n"
+                    +"2. 치즈스틱            | 진하고 고소한 자연 모짜렐라가 가득한 치즈스틱!\n"
+                    +"3. 어니언 링           | 더 바삭하게 한 입에 쏙!\n"
+                    +"4. 너겟킹              | 바삭~ 촉촉~ 한입에 쏙 부드러운 너겟킹\n"
+                    +"0. 뒤로가기            | 전체메뉴로 돌아가기\n")
+                var sd = readln()
+                val buy = Buyside()
+                when (sd.toInt()) {
+                    1 -> {while (true) {
+                        var f = fries()  //f = 감자튀김
+                        buy.name(fries()) //감자튀김 소개 내용
+                        val b = readln()
+                        when (b.toInt()) {
+                            1 -> {
+                                buy.one(fries()) //단품 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${f.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            2 -> {
+                                buy.set(fries()) //사이즈업 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${f.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            3 -> {
+                                buy.displayInfo(fries())
+                                var purchase = readln()
+                                if (purchase.toInt() == 0) {
+                                    continue
+                                }
+                            }
+                            0 -> {
+                                break
+                            }
+                        }
+                    }
+                    }
+                    2 -> {while (true) {
+                        var cz = ch()  //cz = 치즈
+                        buy.name(ch()) //감자튀김 소개 내용
+                        val b = readln()
+                        when (b.toInt()) {
+                            1 -> {
+                                buy.one(ch()) //단품 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${cz.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            2 -> {
+                                buy.set(ch()) //사이즈업 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${cz.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            3 -> {
+                                buy.displayInfo(ch())
+                                var purchase = readln()
+                                if (purchase.toInt() == 0) {
+                                    continue
+                                }
+                            }
+                            0 -> {
+                                break
+                            }
+                        }
+                    }
+                    }
+                    3 -> {while (true) {
+                        var oo = on()  //oo = 어니언링
+                        buy.name(on()) //어니언링 소개 내용
+                        val b = readln()
+                        when (b.toInt()) {
+                            1 -> {
+                                buy.one(on()) //단품 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${oo.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            2 -> {
+                                buy.set(on()) //사이즈업 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${oo.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            3 -> {
+                                buy.displayInfo(on())
+                                var purchase = readln()
+                                if (purchase.toInt() == 0) {
+                                    continue
+                                }
+                            }
+                            0 -> {
+                                break
+                            }
+                        }
+                    }
+                    }
+                    4 -> {while (true) {
+                        var n = ng()  //n = 너겟
+                        buy.name(ng()) //너겟 소개 내용
+                        val b = readln()
+                        when (b.toInt()) {
+                            1 -> {
+                                buy.one(ng()) //단품 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${n.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            2 -> {
+                                buy.set(ng()) //사이즈업 구매창
+                                var purchase = readln()
+                                when (purchase.toInt()) {
+                                    1 -> {  //결제
+                                        println("${n.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
+                                        break
+                                    }
+                                    0 -> {
+                                        continue
+                                    }
+                                }
+                            }
+                            3 -> {
+                                buy.displayInfo(ng())
+                                var purchase = readln()
+                                if (purchase.toInt() == 0) {
+                                    continue
+                                }
+                            }
+                            0 -> {
+                                break
+                            }
+                        }
+                    }
+                    }
+                    0 -> {
+                        break
+                    }
+                }
             }
+        }
             //음료
             4 -> {
 
