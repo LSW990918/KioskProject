@@ -9,6 +9,7 @@ import Mtndwe
 import Spr
 import Wel
 
+
 fun String.isNumeric(): Boolean {
     return try {
         this.toInt()
