@@ -326,7 +326,292 @@ fun main() {
             }
             //치킨 버거
             2 -> {
-
+                while (true){
+                    println("[Chickenburger MENU]\n"
+                            + "1. 치킨 버거           | W  6.6 | 고소한 마요소스와 치킨패티 버거!\n"
+                            + "2. 바베큐 치킨 버거     | W  6.6 | 치킨 패티에 불맛 가득 바베큐 소스까지!\n"
+                            + "3. 롱치킨 버거         | W  8.1 | 길어진 만큼 소스와 싱싱한 야채가 가득!\n"
+                            + "4. 치킨킹             | W  9.9 | 스파이시한 통닭다리살로 만들어진 프리미엄 치킨버거. 치킨킹!\n"
+                            + "0. 뒤로가기           | 전체메뉴로 돌아가기\n")
+                    var ww = readln()
+                    if (!ww.isNumeric()) {
+                        System.err.println("입력은 숫자만 가능합니다")
+                        continue }
+                    val ch = Chic()
+                    when (ww.toInt()) {
+                        1 -> {//치킨버거
+                            while (true) {
+                                var w = Base()
+                                ch.name(Base()) //해당 버거 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        ch.one(Base()) //단품 구매창
+                                        cost = cost + w.price
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name} | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.price
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        ch.set(Base()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name}세트 | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 세트 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.set
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        ch.displayInfo(Base())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        2 -> { // 바베큐 치킨버거
+                            while (true) {
+                                var w = Barb()
+                                ch.name(Barb()) //해당 버거 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        ch.one(Barb()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.price
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name} | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.price
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        ch.set(Barb()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name}세트 | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 세트 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.set
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        ch.displayInfo(Barb())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        3 -> { // 롱치킨버거
+                            while (true) {
+                                var w = Long()
+                                ch.name(Long()) //해당 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        ch.one(Long()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.price
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name} | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.price
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        ch.set(Long()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name}세트 | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 세트 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.set
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        ch.displayInfo(Long())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        4 -> { // 큐브스테이크와퍼
+                            while (true) {
+                                var w = King()  //w = 기본 와퍼
+                                ch.name(King()) //해당 와퍼 소개 내용
+                                val b = readln()
+                                when (b.toInt()) {
+                                    1 -> {
+                                        ch.one(King()) //단품 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.price
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name} | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.price
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    2 -> {
+                                        ch.set(King()) //세트 구매창
+                                        var purchase = readln()
+                                        when (purchase.toInt()) {
+                                            1 -> { //결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon >= 0) {
+                                                    var basket = " ${w.name}세트 | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name} 세트 추가 완료!\n"
+                                                            +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                                    continue
+                                                } else {
+                                                    cost -= w.set
+                                                    println("잔액이 부족합니다.")
+                                                }
+                                                continue
+                                            }
+                                            0 -> {
+                                                continue
+                                            }
+                                        }
+                                    }
+                                    3 -> {
+                                        ch.displayInfo(King())
+                                        var purchase = readln()
+                                        if (purchase.toInt() == 0) {
+                                            continue
+                                        }
+                                    }
+                                    0 -> {
+                                        break
+                                    }
+                                }
+                            }
+                        }
+                        0 -> {
+                            break
+                        }
+                    }
+                }
             }
             //사이드
             3 -> {
@@ -916,6 +1201,7 @@ fun main() {
                     }
                 }
             }
+            //장바구니
             5 -> {
                 println("[장바구니 목록]")
                 for (i in 0 until basketlist.size) {
@@ -931,6 +1217,7 @@ fun main() {
                 when (cho.toInt()) {
                     1 -> {
                         println("결제가 완료 되었습니다. 감사합니다.")
+                        basketlist.clear()
                         continue
                     }
                     0 -> {
