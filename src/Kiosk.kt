@@ -39,10 +39,10 @@ fun main() {
             1 -> {
                 while (true){
                     println("[Whopper MENU]\n"
-                            + "1. Whopper            | W  8.0 | 버거킹의 대표 메뉴 쇠고기패티 와퍼!\n"
-                            + "2. Bulgogi whopper    | W  8.0 | 불맛 가득 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!\n"
-                            + "3. Monster whopper    | W 10.2 | 기본재료에 치킨패티, 베이컨, 화끈한 디아블로 소스를 더한 와퍼!\n"
-                            + "4. Cube steak whopper | W  9.9 | 고기에 고기를 쌓아만든 고기 맛의 정점\n"
+                            + "1. 와퍼               | W  8.0 | 버거킹의 대표 메뉴 쇠고기패티 와퍼!\n"
+                            + "2. 불고기 와퍼         | W  8.0 | 불맛 가득 쇠고기 패티가 들어간 와퍼에 달콤한 불고기 소스까지!\n"
+                            + "3. 몬스터 와퍼         | W 10.2 | 기본재료에 치킨패티, 베이컨, 화끈한 디아블로 소스를 더한 와퍼!\n"
+                            + "4. 큐브 스테이크 와퍼   | W  9.9 | 고기에 고기를 쌓아만든 고기 맛의 정점\n"
                             + "0. 뒤로가기            | 전체메뉴로 돌아가기\n")
                     var ww = readln()  //와퍼 선택하기
                     if (!ww.isNumeric()) {
@@ -349,9 +349,20 @@ fun main() {
                                 buy.one(fries()) //단품 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${f.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += f.price
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${f.name}(M) | ${f.price} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${f.name}(M) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= f.price
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -359,12 +370,23 @@ fun main() {
                                 }
                             }
                             2 -> {
-                                buy.set(fries()) //사이즈업 구매창
+                                buy.up(fries()) //사이즈업 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${f.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += f.up
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${f.name}(L) | ${f.up} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${f.name}(L) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= f.up
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -393,9 +415,20 @@ fun main() {
                                 buy.one(ch()) //단품 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${cz.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += cz.price
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${cz.name}(M) | ${cz.price} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${cz.name}(M) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= cz.price
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -403,12 +436,23 @@ fun main() {
                                 }
                             }
                             2 -> {
-                                buy.set(ch()) //사이즈업 구매창
+                                buy.up(ch()) //사이즈업 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${cz.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += cz.up
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${cz.name}(L) | ${cz.up} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${cz.name}(L) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= cz.up
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -437,9 +481,20 @@ fun main() {
                                 buy.one(on()) //단품 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${oo.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += oo.price
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${oo.name}(M) | ${oo.price} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${oo.name}(M) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= oo.price
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -447,12 +502,23 @@ fun main() {
                                 }
                             }
                             2 -> {
-                                buy.set(on()) //사이즈업 구매창
+                                buy.up(on()) //사이즈업 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${oo.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += oo.up
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${oo.name}(L) | ${oo.up} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${oo.name}(L) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= oo.up
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -481,9 +547,20 @@ fun main() {
                                 buy.one(ng()) //단품 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${n.price}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += n.price
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${n.name}(M) | ${n.price} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${n.name}(M) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= n.price
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
@@ -491,12 +568,23 @@ fun main() {
                                 }
                             }
                             2 -> {
-                                buy.set(ng()) //사이즈업 구매창
+                                buy.up(ng()) //사이즈업 구매창
                                 var purchase = readln()
                                 when (purchase.toInt()) {
-                                    1 -> {  //결제
-                                        println("${n.set}결제가 완료되었습니다") // 결제화면으로 넘어가기
-                                        break
+                                    1 -> { //결제
+                                        cost += n.up
+                                        var mon = money - cost
+                                        if (mon >= 0) {
+                                            var basket = " ${n.name}(L) | ${n.up} | "
+                                            basketlist.add(basket)
+                                            println("장바구니에 ${n.name}(L) 추가 완료!\n"
+                                                    +"추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
+                                            continue
+                                        } else {
+                                            cost -= n.up
+                                            println("잔액이 부족합니다.")
+                                        }
+                                        continue
                                     }
                                     0 -> {
                                         continue
