@@ -23,10 +23,6 @@ fun main() {
 
     for (i in 0 until foods.size) {
         println("${i + 1}. ${foods[i]} ")
+
     }
-
-}
-
-private fun <K, V> MutableMap<K, V>.set(key: Pair<String, Int>) {
-
 }
