@@ -2,14 +2,12 @@
 
 package Classes
 
-
 import BuyDrink
 import Coca
 import Kiosk.*
 import Mtndwe
 import Spr
 import Wel
-
 
 fun main() {
     val basketlist = arrayListOf<String>()
@@ -56,11 +54,19 @@ fun main() {
                                 var w = Basic()  //w = 기본 와퍼
                                 buy.name(Basic()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(Basic()) //단품 구매창
                                         cost = cost + w.price
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 var mon = money - cost
@@ -78,16 +84,18 @@ fun main() {
                                                 }
                                                 continue
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buy.set(Basic()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -116,6 +124,10 @@ fun main() {
                                     3 -> {
                                         buy.displayInfo(Basic())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -133,10 +145,18 @@ fun main() {
                                 var w = Bulg()  //w = 기본 와퍼
                                 buy.name(Bulg()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(Bulg()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -165,6 +185,10 @@ fun main() {
                                     2 -> {
                                         buy.set(Bulg()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -193,6 +217,10 @@ fun main() {
                                     3 -> {
                                         buy.displayInfo(Bulg())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -210,10 +238,18 @@ fun main() {
                                 var w = Mons()  //w = 기본 와퍼
                                 buy.name(Mons()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(Mons()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -242,6 +278,10 @@ fun main() {
                                     2 -> {
                                         buy.set(Mons()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -270,6 +310,10 @@ fun main() {
                                     3 -> {
                                         buy.displayInfo(Mons())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -287,10 +331,18 @@ fun main() {
                                 var w = Cube()  //w = 기본 와퍼
                                 buy.name(Cube()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(Cube()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -319,6 +371,10 @@ fun main() {
                                     2 -> {
                                         buy.set(Cube()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -347,6 +403,10 @@ fun main() {
                                     3 -> {
                                         buy.displayInfo(Cube())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -376,6 +436,10 @@ fun main() {
                             + "0. 뒤로가기           | 전체메뉴로 돌아가기\n")
                     var ww = readln()
                     if (!ww.isNumeric()) {
+                        System.err.println("메뉴 입력은 숫자만 가능합니다")
+                        continue
+                    }
+                    if (!ww.isNumeric()) {
                         System.err.println("입력은 숫자만 가능합니다")
                         continue }
                     val ch = Chic()
@@ -385,11 +449,19 @@ fun main() {
                                 var w = Base()
                                 ch.name(Base()) //해당 버거 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         ch.one(Base()) //단품 구매창
                                         cost = cost + w.price
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 var mon = money - cost
@@ -413,6 +485,10 @@ fun main() {
                                     2 -> {
                                         ch.set(Base()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -437,6 +513,10 @@ fun main() {
                                     3 -> {
                                         ch.displayInfo(Base())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -452,10 +532,18 @@ fun main() {
                                 var w = Barb()
                                 ch.name(Barb()) //해당 버거 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         ch.one(Barb()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -480,6 +568,10 @@ fun main() {
                                     2 -> {
                                         ch.set(Barb()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -504,6 +596,10 @@ fun main() {
                                     3 -> {
                                         ch.displayInfo(Barb())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -519,10 +615,18 @@ fun main() {
                                 var w = Long()
                                 ch.name(Long()) //해당 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         ch.one(Long()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -547,6 +651,10 @@ fun main() {
                                     2 -> {
                                         ch.set(Long()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -571,6 +679,10 @@ fun main() {
                                     3 -> {
                                         ch.displayInfo(Long())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -586,10 +698,18 @@ fun main() {
                                 var w = King()  //w = 기본 와퍼
                                 ch.name(King()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         ch.one(King()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.price
@@ -614,6 +734,10 @@ fun main() {
                                     2 -> {
                                         ch.set(King()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += w.set
@@ -638,6 +762,10 @@ fun main() {
                                     3 -> {
                                         ch.displayInfo(King())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
@@ -666,6 +794,10 @@ fun main() {
                                 + "0. 뒤로가기            | 전체메뉴로 돌아가기\n"
                     )
                     var sd = readln()
+                    if (!sd.isNumeric()) {
+                        System.err.println("메뉴 입력은 숫자만 가능합니다")
+                        continue
+                    }
                     val buy = Buyside()
                     when (sd.toInt()) {
                         1 -> {
@@ -673,10 +805,18 @@ fun main() {
                                 var f = fries()  //f = 감자튀김
                                 buy.name(fries()) //감자튀김 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(fries()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += f.price
@@ -696,16 +836,18 @@ fun main() {
                                                 continue
 
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buy.up(fries()) //사이즈업 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += f.up
@@ -724,37 +866,45 @@ fun main() {
                                                 }
                                                 continue
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buy.displayInfo(fries())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
                         }
-
                         2 -> {
                             while (true) {
                                 var cz = ch()  //cz = 치즈
                                 buy.name(ch()) //감자튀김 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(ch()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += cz.price
@@ -772,14 +922,16 @@ fun main() {
                                                     println("잔액이 부족합니다.")
                                                 }
                                                 continue
-
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buy.up(ch()) //사이즈업 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += cz.up
@@ -798,37 +950,45 @@ fun main() {
                                                 }
                                                 continue
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buy.displayInfo(ch())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
                         }
-
                         3 -> {
                             while (true) {
                                 var oo = on()  //oo = 어니언링
                                 buy.name(on()) //어니언링 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(on()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += oo.price
@@ -849,10 +1009,13 @@ fun main() {
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buy.up(on()) //사이즈업 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += oo.up
@@ -871,37 +1034,45 @@ fun main() {
                                                 }
                                                 continue
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buy.displayInfo(on())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
                         }
-
                         4 -> {
                             while (true) {
                                 var n = ng()  //n = 너겟
                                 buy.name(ng()) //너겟 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buy.one(ng()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += n.price
@@ -922,10 +1093,13 @@ fun main() {
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buy.up(ng()) //사이즈업 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
                                                 cost += n.up
@@ -943,28 +1117,31 @@ fun main() {
                                                     println("잔액이 부족합니다.")
                                                 }
                                                 continue
-
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buy.displayInfo(ng())
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         if (purchase.toInt() == 0) {
                                             continue
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
+                        }
+                        0 -> {
+                            break
                         }
                     }
                 }
@@ -974,11 +1151,11 @@ fun main() {
                 while (true) {
                     println(
                         "[SoftDrink MENU]\n"
-                                + "1. CocaCola     | 햄버거의 영원한 단짝 코카콜라! \n"
-                                + "2. Sprite       | 콜라의 라이벌 스프라이트 샤워하실래요?\n"
-                                + "3. Welches      | 포도의 산뜻함과 청량감이 만났다. 웰치스!\n"
-                                + "4. Mountain Dwe | 새로운 맛의 청량음료를 원한다면 골라라 마운틴듀!\n"
-                                + "0. 뒤로가기       | 전체메뉴로 돌아가기\n"
+                                + "1. 코카콜라       | 햄버거의 영원한 단짝 코카콜라! \n"
+                                + "2. 스프라이트     | 콜라의 라이벌 스프라이트 샤워하실래요?\n"
+                                + "3. 웰치스        | 포도의 산뜻함과 청량감이 만났다. 웰치스!\n"
+                                + "4. 마운틴 듀     | 새로운 맛의 청량음료를 원한다면 골라라 마운틴듀!\n"
+                                + "0. 뒤로가기      | 전체메뉴로 돌아가기\n"
 
                     )
                     var sd = readln()  //음료 선택하기
@@ -986,223 +1163,261 @@ fun main() {
                         System.err.println("입력은 숫자만 가능합니다")
                         continue
                     }
-
-                    val buyDrink = BuyDrink()  //buy = Buy 클래스
+                    val buyDrink = BuyDrink()
                     when (sd.toInt()) {
-                        1 -> { //1번(33줄) 선택시 기본 와퍼
+                        1 -> { //코카콜라
                             while (true) {
-                                var w = Coca()  //w = 기본 와퍼
-                                buyDrink.name(Coca()) //해당 와퍼 소개 내용
+                                var w = Coca()
+                                buyDrink.name(Coca()) //해당 음료 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
-                                        buyDrink.one(Coca()) //단품 구매창
+                                        buyDrink.one(Coca()) //구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.price < 0) {
+                                            1 -> {
+                                                cost += w.price//결제
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.price
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.price}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.price}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.price //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(M) | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(M) 추가 완료!\n"
+                                                         + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
-                                        buyDrink.set(Coca()) //세트 구매창
+                                        buyDrink.set(Coca()) //L 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.set < 0) {
+                                            1 -> {// L 결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(L) | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(L) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
-                                        buyDrink.set2(Coca()) //세트 구매창
+                                        buyDrink.set2(Coca()) //XL 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
-                                                if (money - w.set2 < 0) {
+                                                cost += w.set2
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set2
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set2}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set2}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set2 //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(XL) | ${w.set2} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(XL) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
-
                         }
-
                         2 -> { //1번(33줄) 선택시 기본 와퍼
                             while (true) {
                                 var w = Spr()  //w = 기본 와퍼
                                 buyDrink.name(Coca()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buyDrink.one(Spr()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.price < 0) {
+                                            1 -> {
+                                                cost += w.price//결제
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.price
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.price}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.price}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.price //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(M) | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(M) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buyDrink.set(Spr()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.set < 0) {
+                                            1 -> {// L 결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(L) | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(L) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buyDrink.set2(Spr()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
-                                                if (money - w.set2 < 0) {
+                                                cost += w.set2
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set2
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set2}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set2}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set2 //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(XL) | ${w.set2} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(XL) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
-
                         }
-
                         3 -> { //1번(33줄) 선택시 기본 와퍼
                             while (true) {
                                 var w = Wel()  //w = 기본 와퍼
                                 buyDrink.name(Wel()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buyDrink.one(Wel()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.price < 0) {
+                                            1 -> {
+                                                cost += w.price//결제
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.price
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.price}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.price}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.price //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(M) | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(M) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buyDrink.set(Wel()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.set < 0) {
+                                            1 -> {// L 결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(L) | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(L) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
@@ -1212,126 +1427,139 @@ fun main() {
                                     3 -> {
                                         buyDrink.set2(Wel()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
-                                                if (money - w.set2 < 0) {
+                                                cost += w.set2
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set2
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set2}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set2}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set2 //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(XL) | ${w.set2} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(XL) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
-
                         }
-
                         4 -> { //1번(33줄) 선택시 기본 와퍼
                             while (true) {
                                 var w = Mtndwe()  //w = 기본 와퍼
                                 buyDrink.name(Mtndwe()) //해당 와퍼 소개 내용
                                 val b = readln()
+                                if (!b.isNumeric()) {
+                                    System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                    continue
+                                }
                                 when (b.toInt()) {
                                     1 -> {
                                         buyDrink.one(Mtndwe()) //단품 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.price < 0) {
+                                            1 -> {
+                                                cost += w.price//결제
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.price
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.price}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.price}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.price //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(M) | ${w.price} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(M) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     2 -> {
                                         buyDrink.set(Mtndwe()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
-                                            1 -> { //결제
-                                                if (money - w.set < 0) {
+                                            1 -> {// L 결제
+                                                cost += w.set
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(L) | ${w.set} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(L) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     3 -> {
                                         buyDrink.set2(Mtndwe()) //세트 구매창
                                         var purchase = readln()
+                                        if (!purchase.isNumeric()) {
+                                            System.err.println("메뉴 입력은 숫자만 가능합니다")
+                                            continue
+                                        }
                                         when (purchase.toInt()) {
                                             1 -> { //결제
-                                                if (money - w.set2 < 0) {
+                                                cost += w.set2
+                                                var mon = money - cost
+                                                if (mon < 0) {
                                                     println("잔액이 부족합니다.")
+                                                    cost -= w.set2
                                                 } else {
-                                                    println(
-                                                        "결제금액 ${w.set2}원이 결제되었습니다.\n"
-                                                                + "남은 잔액은 ${money - w.set2}원 입니다. 감사합니다.\n"
-                                                    )
-                                                    money -= w.set2 //결제완료후 잔액차감
+                                                    var basket = " ${w.name}(XL) | ${w.set2} | "
+                                                    basketlist.add(basket)
+                                                    println("장바구니에 ${w.name}(XL) 추가 완료!\n"
+                                                            + "추가로 담을수 있는 금액은 ${mon}원 입니다. 감사합니다.\n")
                                                 }
                                                 break
                                             }
-
-
                                             0 -> {
                                                 continue
                                             }
                                         }
                                     }
-
                                     0 -> {
                                         break
                                     }
                                 }
                             }
-
                         }
-
                         0 -> {
                             break
                         }
                     }
                 }
             }
-
             //장바구니
             5 -> {
                 println("[장바구니 목록]")
@@ -1351,9 +1579,9 @@ fun main() {
                     1 -> {
                         println("결제가 완료 되었습니다. 감사합니다.")
                         basketlist.clear()
+                        cost = 0
                         continue
                     }
-
                     0 -> {
                         continue
                     }
@@ -1366,7 +1594,6 @@ fun main() {
         }
     }
 }
-
 fun String.isNumeric(): Boolean {
     return try {
         this.toInt()
